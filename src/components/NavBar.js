@@ -1,13 +1,13 @@
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 
-function NavBar() {
-
+function NavBar({ logout }) {  // Accept logout prop from App.js
   return (
     <nav>
       <NavLink
         to="/"
-        className="nav-link" 
+        className="nav-link"
+        end  // Ensures exact match for home route
       >
         Home
       </NavLink>
@@ -17,6 +17,12 @@ function NavBar() {
       >
         About
       </NavLink>
+      <button 
+        onClick={logout} 
+        className="logout-button"  // Add styling via NavBar.css
+      >
+        Logout
+      </button>
     </nav>
   );
 }
